@@ -1,10 +1,8 @@
 {
   "name": "shivansh",
   "version": "0.1.0",
-  "priva
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.te": true,
-  "dependencies": {4.0",
+  "private": true,
+  "dependencies": {
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.17.0",
     "react": "^18.3.1",

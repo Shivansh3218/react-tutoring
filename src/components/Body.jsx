@@ -1,11 +1,10 @@
 import React from 'react'
 
-function Body() {
+export function Body() {
 
-
-setInterval(() => {
-    console.log("Hello")
-},1000)
+// setInterval(() => {
+//     console.log("Hello")
+// },1000)
 
 
   return (
@@ -24,4 +23,3 @@ setInterval(() => {
   )
 }
 
-export default Body
