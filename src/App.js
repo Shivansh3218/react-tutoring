@@ -3,7 +3,11 @@ import Header from "./components/Header";
 import { Body } from "./components/Body";
 import Counter from "./components/Counter";
 import { useState } from "react";
-//rule is such that ki you have to write the name of the functional component in the first letter capital letter
+
+//rule is such that ki you have to write the name of the functional component in the first letter capital letter.
+
+
+// Data flow is uni-directional in react => from parent to child.
 
 //Hooks=> Are functions that let you use state and other React features in functional components
 
@@ -14,6 +18,7 @@ import { useState } from "react";
 //useRef
 //useMemo
 //useCallback
+//custom hoooks
 
 //Two types of components
 
@@ -29,7 +34,7 @@ function App() {
   //returning the JSX
   // const countrValue = 1000;
 
-  let [countrValue, setCountrValue] = useState(0);
+  let [counterValue, setCountrValue] = useState(10);
 
   return (
     <div className="App">
@@ -44,7 +49,8 @@ function App() {
         }}
       />
       {/* <Body /> */}
-      <Counter props={countrValue} />
+      <Counter counterValue={counterValue} value={278} />
+
     </div>
   );
 }
