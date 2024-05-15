@@ -3,9 +3,9 @@ import Header from "./components/Header";
 import { Body } from "./components/Body";
 import Counter from "./components/Counter";
 import { useState } from "react";
+import FormCompoenent from "./components/FormComponent";
 
 //rule is such that ki you have to write the name of the functional component in the first letter capital letter.
-
 
 // Data flow is uni-directional in react => from parent to child.
 
@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <label>Enter the value</label>
+      {/* <label>Enter the value</label>
       <input
         type="number"
         onChange={(e) => {
@@ -47,10 +47,10 @@ function App() {
           let value = e.target.value;
           setCountrValue(parseInt(value));
         }}
-      />
+      /> */}
       {/* <Body /> */}
-      <Counter counterValue={counterValue} value={278} />
-
+      {/* <Counter counterValue={counterValue} value={278} /> */}
+      <FormCompoenent />
     </div>
   );
 }

@@ -5,7 +5,7 @@ function Header() {
 
   return <div>
     
-    <h1>Counter</h1>
+    {/* <h1>Counter</h1> */}
     
     
     </div>;
