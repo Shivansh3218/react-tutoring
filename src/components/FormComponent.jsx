@@ -24,13 +24,28 @@ function FormComponent() {
 
   const [submittedData, setSubmittedData] = useState(false)
 
-  const handleChange = (e) => {
+//   const handleChange = (e) => {
+//     setFormData({
+//         ...formData,
+//         name: e.target.value,
+        
+//     })
+//   };
+
+
+
+
+const handleChange = (e,name) => {
     setFormData({
         ...formData,
-        name: e.target.value,
+        [name]: e.target.value,
         
     })
   };
+
+
+
+
 
 //   useEffect(() => {
 //     console.log("Form Data", formData);
@@ -72,7 +87,7 @@ const handleSubmit = (e)=>{
           <input
             type="text"
             onChange={(event) => {
-              handleChange(event);
+              handleChange(event, "name");
             }}
           />
         </label>
@@ -80,14 +95,14 @@ const handleSubmit = (e)=>{
         <label htmlFor="name">
           Enter the user email &nbsp;
           <input type="text"     onChange={(event) => {
-              handleEmailChange(event);
+                handleChange(event, "email");
             }}/>
         </label>
         <br />
         <label htmlFor="name">
           Enter the password &nbsp;
           <input type="password"      onChange={(event) => {
-              handlePasswordChange(event);
+               handleChange(event, "password");
             }}/>
         </label>
 
