@@ -13,7 +13,6 @@ export function Body() {
         backgroundColor: "red",
       }}
     >
-      <Counter />
       <h1>Body</h1>
     </div>
   );

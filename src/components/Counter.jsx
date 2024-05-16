@@ -1,15 +1,17 @@
 import React from "react";
 import "./counter.css";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 // const { counterValue, value } = {
 //   counterValue: 0,
 //   value: 12,
 // };
 
-function Counter({counterValue, value}) {
+function Counter({ counterValue, value }) {
+  const navigate = useNavigate();
 
-  console.log(counterValue,value, "This is the value of props");
+  console.log(counterValue, value, "This is the value of props");
 
   // State  => it is an internal object that is used to store the data in the component.
 
@@ -21,21 +23,23 @@ function Counter({counterValue, value}) {
   //if the dependency array is empty then the useEffect will run only once
   //if the dependency array is not empty then the useEffect will run whenever the value of the dependency array changes
   //if the dependency array is not present then the useEffect will run whenever the component is rendered or any state changes in the component.
-  
-let callback = () => {
-  setCount(counterValue);
-  console.log("This is the use effect");
 
-}
-  useEffect(callback,[counterValue]);
+  let callback = () => {
+    setCount(counterValue);
+    console.log("This is the use effect");
+  };
+  useEffect(callback, [counterValue]);
 
-  const [ count , setCount] = useState(counterValue);
+  const [count, setCount] = useState(counterValue);
 
   //  let count = 0;
 
   function increment() {
     setCount(count + 1);
     // count++;
+
+    if (count === 20) navigate("/about");
+
     console.log(count);
   }
 

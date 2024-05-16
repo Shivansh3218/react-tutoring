@@ -32,9 +32,6 @@ function FormComponent() {
 //     })
 //   };
 
-
-
-
 const handleChange = (e,name) => {
     setFormData({
         ...formData,
@@ -42,10 +39,6 @@ const handleChange = (e,name) => {
         
     })
   };
-
-
-
-
 
 //   useEffect(() => {
 //     console.log("Form Data", formData);
