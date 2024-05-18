@@ -6,6 +6,7 @@ import { useState } from "react";
 import FormCompoenent from "./components/FormComponent";
 import { Route, Routes, Link } from "react-router-dom";
 import About from "./components/About";
+import Useeffect from "./examples/Useeffect";
 
 //rule is such that ki you have to write the name of the functional component in the first letter capital letter.
 
@@ -44,6 +45,7 @@ function App() {
 
   return (
     <div className="App">
+      <Useeffect/>
       <Link to="/about"><button>About</button> </Link>
       <Link to="/counter" ><button>Counter</button> </Link>
       <Link to="/body"><button>Body</button> </Link>
