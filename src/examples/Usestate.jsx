@@ -2,6 +2,8 @@ import React, {useState} from "react";
 
 function Usestate() {
 
+    // hook => hooks are the functions that help you to use the state and other react features in the functional components.
+
     // useState is a hook that is used to add the state in the functional components.
 
     // state => it is an internal object of a component.
