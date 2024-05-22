@@ -2,12 +2,15 @@ import "./App.css";
 import Header from "./components/Header";
 import { Body } from "./components/Body";
 import Counter from "./components/Counter";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import FormCompoenent from "./components/FormComponent";
 import { Route, Routes, Link } from "react-router-dom";
 import About from "./components/About";
 import Useeffect from "./examples/Useeffect";
 import UseeffectExample from "./examples/Effect";
+import Child1 from "./components/propsdrilling/Child1";
+import Child3 from "./components/propsdrilling/Child3";
+import { DataContext } from "./components/context/DataContext";
 
 //rule is such that ki you have to write the name of the functional component in the first letter capital letter.
 
@@ -38,16 +41,44 @@ import UseeffectExample from "./examples/Effect";
 
 //Components => BrowserRouter, Route, Link, Routes
 
+// PROPS = > Props are the arguments that are passed to the components from the parent component.
+//Props are immutable => you cannot change the value of the props in the child component.
+//Props are used to pass the data from the parent component to the child component.
+
 function App() {
   //returning the JSX
   // const countrValue = 1000;
+ const dataContext = useContext(DataContext);
+ const { data, setData } = dataContext;
+
+setData("1000000000000000000")
+
+
 
   let [counterValue, setCountrValue] = useState(10);
 
   return (
     <div className="App">
       {/* <UseeffectExample /> */}
-      <Useeffect/>
+      {/* <Useeffect/> */}
+
+      {/* 
+
+I want my child3 to have the value of counterValue. for that I will have to pass the value from the parent component to the child component.
+<Child1 counterValue={counterValue} />
+<Child2 counterValue={counterValue} />
+<Child3 counterValue={counterValue} /> => recieve the value of counterValue from the parent component.
+
+PROP DRILLING = > Passing the props from the parent component to the child component through the intermediate components.
+
+App
+ ├── CHILD1
+      ├── CHILD2
+           ├── CHILD3
+
+
+*/}
+      <Child1 counterValue={counterValue} />
 
       {/* <Useeffect/>
       <Link to="/about"><button>About</button> </Link>
