@@ -6,11 +6,13 @@ import { useState, useContext } from "react";
 import FormCompoenent from "./components/FormComponent";
 import { Route, Routes, Link } from "react-router-dom";
 import About from "./components/About";
-import Useeffect from "./examples/Useeffect";
-import UseeffectExample from "./examples/Effect";
+import Useeffect from "./hooksExamples/Useeffect";
+import UseeffectExample from "./hooksExamples/Effect";
 import Child1 from "./components/propsdrilling/Child1";
 import Child3 from "./components/propsdrilling/Child3";
-import { DataContext } from "./components/context/DataContext";
+import RefExample from "./hooksExamples/RefExample";
+import MemoExample from "./hooksExamples/MemoExample";
+// import { DataContext } from "./components/context/DataContext";
 
 //rule is such that ki you have to write the name of the functional component in the first letter capital letter.
 
@@ -48,10 +50,10 @@ import { DataContext } from "./components/context/DataContext";
 function App() {
   //returning the JSX
   // const countrValue = 1000;
- const dataContext = useContext(DataContext);
- const { data, setData } = dataContext;
+//  const dataContext = useContext(DataContext);
+//  const { data, setData } = dataContext;
 
-setData("1000000000000000000")
+// setData("1000000000000000000")
 
 
 
@@ -78,7 +80,7 @@ App
 
 
 */}
-      <Child1 counterValue={counterValue} />
+      {/* <Child1 counterValue={counterValue} /> */}
 
       {/* <Useeffect/>
       <Link to="/about"><button>About</button> </Link>
@@ -99,6 +101,11 @@ App
         />
 
       </Routes> */}
+
+      {/* <RefExample /> */}
+      <MemoExample/>
+
+
     </div>
   );
 }
