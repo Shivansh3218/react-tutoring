@@ -13,6 +13,8 @@ import Child3 from "./components/propsdrilling/Child3";
 import RefExample from "./hooksExamples/RefExample";
 import MemoExample from "./hooksExamples/MemoExample";
 import Parent from "./hooksExamples/callbackHook/Parent";
+import ReducerExample from "./hooksExamples/ReducerExample";
+import ReducerForm from "./hooksExamples/ReducerForm";
 // import { DataContext } from "./components/context/DataContext";
 
 //rule is such that ki you have to write the name of the functional component in the first letter capital letter.
@@ -103,8 +105,10 @@ App
 
       {/* <RefExample /> */}
       {/* <MemoExample/> */}
-      <Parent/>
+      {/* <Parent/> */}
+      {/* <ReducerExample/> */}
 
+      <ReducerForm/>
     </div>
   );
 }
