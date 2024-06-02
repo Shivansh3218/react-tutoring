@@ -15,6 +15,8 @@ import MemoExample from "./hooksExamples/MemoExample";
 import Parent from "./hooksExamples/callbackHook/Parent";
 import ReducerExample from "./hooksExamples/ReducerExample";
 import ReducerForm from "./hooksExamples/ReducerForm";
+import CounterEx from "./hooksExamples/customHooks/CounterEx";
+import TitleChanger from "./hooksExamples/customHooks/TitleChanger";
 // import { DataContext } from "./components/context/DataContext";
 
 //rule is such that ki you have to write the name of the functional component in the first letter capital letter.
@@ -23,14 +25,14 @@ import ReducerForm from "./hooksExamples/ReducerForm";
 
 //Hooks=> Are functions that let you use state and other React features in functional components
 
-//useState
-//useEffect
-//useContext
-//useReducer
-//useRef
-//useMemo
-//useCallback
-//custom hoooks
+//useState- state management
+//useEffect  - - side effects
+//useContext state management
+//useReducer state management
+//useRef - to access the dom elements, prevent unneccessary re-renders
+//useMemo - optimization
+//useCallback - optimization
+//custom hoooks -
 
 //Two types of components
 
@@ -108,7 +110,10 @@ App
       {/* <Parent/> */}
       {/* <ReducerExample/> */}
 
-      <ReducerForm/>
+      {/* <ReducerForm/> */}
+
+      {/* <CounterEx /> */}
+      <TitleChanger/>
     </div>
   );
 }
