@@ -17,6 +17,7 @@ import ReducerExample from "./hooksExamples/ReducerExample";
 import ReducerForm from "./hooksExamples/ReducerForm";
 import CounterEx from "./hooksExamples/customHooks/CounterEx";
 import TitleChanger from "./hooksExamples/customHooks/TitleChanger";
+import EnhancedComponent from "./higherOrder/HOC";
 // import { DataContext } from "./components/context/DataContext";
 
 //rule is such that ki you have to write the name of the functional component in the first letter capital letter.
@@ -61,7 +62,7 @@ function App() {
   // setData("1000000000000000000")
 
   let [counterValue, setCountrValue] = useState(10);
-
+const inputTypes = ["text", "number", "email"];
   return (
     <div className="App">
       {/* <UseeffectExample /> */}
@@ -113,7 +114,25 @@ App
       {/* <ReducerForm/> */}
 
       {/* <CounterEx /> */}
-      <TitleChanger/>
+      {/* <TitleChanger/> */}
+
+      <EnhancedComponent />
+
+
+
+  
+          {inputTypes.map((type, index) => (
+            <input key={index} type={type} onChange={()=>{}}/>
+          ))}
+
+
+
+
+
+
+
+
+
     </div>
   );
 }

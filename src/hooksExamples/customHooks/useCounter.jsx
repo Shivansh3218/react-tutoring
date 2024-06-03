@@ -15,7 +15,7 @@ export default function useCounter(initialValue = 0) {
 
   const reset = () => {
     setCount(0);
-    };
-     
-    return {count, increment, decrement, reset};
+  };
+
+  return { count, increment, decrement, reset };
 }
