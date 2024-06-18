@@ -2,7 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import { Body } from "./components/Body";
 import Counter from "./components/Counter";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import FormCompoenent from "./components/FormComponent";
 import { Route, Routes, Link } from "react-router-dom";
 import About from "./components/About";
@@ -18,6 +18,7 @@ import ReducerForm from "./hooksExamples/ReducerForm";
 import CounterEx from "./hooksExamples/customHooks/CounterEx";
 import TitleChanger from "./hooksExamples/customHooks/TitleChanger";
 import EnhancedComponent from "./higherOrder/HOC";
+import axios from "axios";
 // import { DataContext } from "./components/context/DataContext";
 
 //rule is such that ki you have to write the name of the functional component in the first letter capital letter.
@@ -61,10 +62,55 @@ function App() {
 
   // setData("1000000000000000000")
 
-  let [counterValue, setCountrValue] = useState(10);
-const inputTypes = ["text", "number", "email"];
+  // let [counterValue, setCountrValue] = useState(10);
+  // const inputTypes = ["text", "number", "email"];
+  const [data, setData] = useState(null);
+  
+  useEffect(() => {
+    // Define the async function to fetch data
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://flipkart-backend-2qdg.onrender.com/data"
+        );
+        setData(response.data);
+      } catch (error) {
+       
+      } 
+    };
+
+    // Call the fetchData function
+    fetchData();
+  }, []); // Empty dependency array to run only once on mount
+
+  function extractUrls(inputString) {
+    // Parse the input string to get the array
+    const urlArray = JSON.parse(inputString);
+
+    // Return the array of URLs
+    return urlArray;
+  }
+
+  // Example usage
+  // const inputString =
+  //   '["http://img5a.flixcart.com/image/short/u/4/a/altht-3p-21-alisha-38-original-imaeh2d5vm5zbtgg.jpeg", "http://img5a.flixcart.com/image/short/p/j/z/altght4p-26-alisha-38-original-imaeh2d5kbufss6n.jpeg", "http://img5a.flixcart.com/image/short/p/j/z/altght4p-26-alisha-38-original-imaeh2d5npdybzyt.jpeg", "http://img5a.flixcart.com/image/short/z/j/7/altght-7-alisha-38-original-imaeh2d5jsz2ghd6.jpeg"]';
+
+  // const urls = extractUrls(inputString);
+  // console.log(urls);
+
   return (
     <div className="App">
+      {data &&
+        data.map((item, index) => {
+          return (
+            <div key={index}>
+              <h1>{item.product_name}</h1>
+              <p>{item.discounted_price}</p>
+              <img src={extractUrls(item.image)[0]} alt="" />
+            </div>
+          );
+        })}
+
       {/* <UseeffectExample /> */}
       {/* <Useeffect/> */}
 
@@ -118,21 +164,9 @@ App
 
       <EnhancedComponent />
 
-
-
-  
-          {inputTypes.map((type, index) => (
-            <input key={index} type={type} onChange={()=>{}}/>
-          ))}
-
-
-
-
-
-
-
-
-
+      {/* {inputTypes.map((type, index) => (
+        <input key={index} type={type} onChange={() => {}} />
+      ))} */}
     </div>
   );
 }
