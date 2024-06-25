@@ -19,6 +19,7 @@ import CounterEx from "./hooksExamples/customHooks/CounterEx";
 import TitleChanger from "./hooksExamples/customHooks/TitleChanger";
 import EnhancedComponent from "./higherOrder/HOC";
 import axios from "axios";
+import Effect from "./hooksExamples/Effect";
 // import { DataContext } from "./components/context/DataContext";
 
 //rule is such that ki you have to write the name of the functional component in the first letter capital letter.
@@ -100,6 +101,7 @@ function App() {
 
   return (
     <div className="App">
+      <Effect/>
       {data &&
         data.map((item, index) => {
           return (
